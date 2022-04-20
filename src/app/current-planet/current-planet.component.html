@@ -1,0 +1,100 @@
+<div class="planet">
+  <div class="container">
+    <div class="planet__content">
+      <div class="planet__link">
+        <a [routerLink]="['/']">На главную</a>
+      </div>
+      <div class="planet__control">
+        <p>Фильтрация жителей по полу</p>
+        <div class="planet__control-group">
+          <button class="planet__button" (click)="changeSex('')">Всех полов</button>
+          <button class="planet__button" (click)="changeSex('male')">Мужской пол</button>
+          <button class="planet__button" (click)="changeSex('female')">Женский пол</button>
+          <button class="planet__button" (click)="changeSex('n/a')">Неопределённый пол</button>
+        </div>
+      </div>
+      <div class="planet__info">
+        <div class="planet__data">
+          <div class="planet__title">Имя планеты:</div>
+          <div class="planet__text">{{planet.name}}</div>
+        </div>
+        <div class="planet__data">
+          <div class="planet__title">Период вращения:</div>
+          <div class="planet__text">{{planet.rotation_period}} hours</div>
+        </div>
+        <div class="planet__data">
+          <div class="planet__title">Орбитальный период:</div>
+          <div class="planet__text">{{planet.orbital_period}} days</div>
+        </div>
+        <div class="planet__data">
+          <div class="planet__title">Диаметр:</div>
+          <div class="planet__text">{{planet.diameter}} km</div>
+        </div>
+        <div class="planet__data">
+          <div class="planet__title">Климат:</div>
+          <div class="planet__text">{{planet.climate}}</div>
+        </div>
+        <div class="planet__data">
+          <div class="planet__title">Гравитация:</div>
+          <div class="planet__text">{{planet.gravity}}</div>
+        </div>
+        <div class="planet__data">
+          <div class="planet__title">Рельеф:</div>
+          <div class="planet__text">{{planet.terrain}}</div>
+        </div>
+        <div class="planet__data">
+          <div class="planet__title">Поверхность воды:</div>
+          <div class="planet__text">{{planet.surface_water}} km</div>
+        </div>
+        <div class="planet__data">
+          <div class="planet__title">Население:</div>
+          <div class="planet__text">{{planet.population}}</div>
+        </div>
+        <div class="planet__films">
+          <div class="planet__title">Фильмы:</div>
+          <div class="planet__text">
+            <div class="planet__film" *ngFor="let film of planet.films">{{film}}</div>
+          </div>
+        </div>
+        <div class="planet__residents">
+          <div class="planet__title">Жители:</div>
+          <div class="planet__text">
+            <div class="planet__resident" *ngFor="let resident of planet.residents | sexPipe:currentSex" (click)="showResident(resident)">
+              <div class="planet__data">
+                <div class="planet__text">{{resident.name}}</div>
+              </div>
+              <div class="planet__data" *ngIf="resident.show">
+                <div class="planet__title">Высота:</div>
+                <div class="planet__text">{{resident.height}}</div>
+              </div>
+              <div class="planet__data" *ngIf="resident.show">
+                <div class="planet__title">Вес:</div>
+                <div class="planet__text">{{resident.mass}}</div>
+              </div>
+              <div class="planet__data" *ngIf="resident.show">
+                <div class="planet__title">Цвет волос:</div>
+                <div class="planet__text">{{resident.hair_color}}</div>
+              </div>
+              <div class="planet__data" *ngIf="resident.show">
+                <div class="planet__title">Цвет кожи:</div>
+                <div class="planet__text">{{resident.skin_color}}</div>
+              </div>
+              <div class="planet__data" *ngIf="resident.show">
+                <div class="planet__title">Цвет глаз:</div>
+                <div class="planet__text">{{resident.eye_color}}</div>
+              </div>
+              <div class="planet__data" *ngIf="resident.show">
+                <div class="planet__title">Дата рождения:</div>
+                <div class="planet__text">{{resident.birth_year}}</div>
+              </div>
+              <div class="planet__data" *ngIf="resident.show">
+                <div class="planet__title">Пол:</div>
+                <div class="planet__text">{{resident.gender}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

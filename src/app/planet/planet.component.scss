@@ -1,0 +1,33 @@
+.planets {
+    
+    &__planet {
+        border: 1px solid #cccccc;
+        padding: 10px 5px;
+        border-radius: 3px;
+        display: flex;
+        row-gap: 5px;
+    }
+
+    &__data {
+        display: flex;
+    }
+
+    &__title {
+        width: 200px;
+    }
+
+    &__link { 
+        text-align: end;
+        align-self: flex-end;
+        flex-grow: 1;
+
+        a,
+        a:active,
+        a:hover,
+        a:visited {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+    }
+}

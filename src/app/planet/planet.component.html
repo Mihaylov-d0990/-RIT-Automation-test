@@ -1,0 +1,43 @@
+<div class="planets__planet" >
+    <div class="planets__info">
+      <div class="planets__data">
+        <div class="planets__title">Имя планеты:</div>
+        <div class="planets__text">{{planet.name}}</div>
+      </div>
+      <div class="planets__data">
+        <div class="planets__title">Период вращения:</div>
+        <div class="planets__text">{{planet.rotation_period}} hours</div>
+      </div>
+      <div class="planets__data">
+        <div class="planets__title">Орбитальный период:</div>
+        <div class="planets__text">{{planet.orbital_period}} days</div>
+      </div>
+      <div class="planets__data">
+        <div class="planets__title">Диаметр:</div>
+        <div class="planets__text">{{planet.diameter}} km</div>
+      </div>
+      <div class="planets__data">
+        <div class="planets__title">Климат:</div>
+        <div class="planets__text">{{planet.climate}}</div>
+      </div>
+      <div class="planets__data">
+        <div class="planets__title">Гравитация:</div>
+        <div class="planets__text">{{planet.gravity}}</div>
+      </div>
+      <div class="planets__data">
+        <div class="planets__title">Рельеф:</div>
+        <div class="planets__text">{{planet.terrain}}</div>
+      </div>
+      <div class="planets__data">
+        <div class="planets__title">Поверхность воды:</div>
+        <div class="planets__text">{{planet.surface_water}} km</div>
+      </div>
+      <div class="planets__data">
+        <div class="planets__title">Население:</div>
+        <div class="planets__text">{{planet.population}}</div>
+      </div>
+    </div>
+    <div class="planets__link">
+      <a [routerLink]="['planet', planet.url]">Перейти к подробной информации</a>
+    </div>
+</div>

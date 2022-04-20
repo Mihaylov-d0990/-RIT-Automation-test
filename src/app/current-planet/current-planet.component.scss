@@ -1,0 +1,85 @@
+:host {
+    flex-grow: 1;
+    display: flex;
+}
+
+.planet {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__content {
+        padding: 20px 10px;
+    }
+
+    &__link {
+        display: flex;
+        margin-bottom: 20px;
+        a,
+        a:visited,
+        a:hover,
+        a:active {
+            display: block;
+            justify-self: flex-start;
+            padding: 7px 15px;
+            border: 1px solid #dddddd;
+            color: #000000;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+    }
+
+    &__control-group {
+        padding-bottom: 20px;
+        padding-top: 10px;
+        display: flex;
+        column-gap: 10px;
+    }
+    
+    &__button {
+        color: #000000;
+        border-radius: 3px;
+        font-size: 16px;
+        border: 1px solid #dddddd;
+        padding: 7px 15px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    &__link a:hover,
+    &__button:hover {
+        background-color: #dddddd;
+    }
+
+    &__data,
+    &__films,
+    &__residents {
+        display: flex;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    &__title {
+        width: 200px;
+    }
+
+    &__info,
+    &__films .planet__text,
+    &__residents .planet__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+
+    &__resident {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        border-bottom: 3px solid #dddddd;
+        cursor: pointer;
+
+        .planet__data:not(:first-child) {
+            padding-left: 20px;
+        }
+    }
+}

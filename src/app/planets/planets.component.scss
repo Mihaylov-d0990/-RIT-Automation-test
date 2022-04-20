@@ -1,0 +1,21 @@
+:host {
+    flex-grow: 1;
+    display: flex;
+}
+
+.planets {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__content {
+        padding: 20px 10px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+}
